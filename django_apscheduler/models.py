@@ -38,6 +38,9 @@ class DjangoJob(models.Model):
 
     class Meta:
         ordering = ("next_run_time",)
+        verboase_name = "Schedule Task"
+        verbose_name_plural = "Schedule Tasks"
+
 
 
 class DjangoJobExecutionManager(models.Manager):
@@ -213,3 +216,5 @@ class DjangoJobExecution(models.Model):
 
     class Meta:
         ordering = ("-run_time",)
+        verbose_name = ("Task Summary ",)
+        verbose_name_plural = "Task Summaries"
