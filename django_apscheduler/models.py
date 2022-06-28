@@ -38,7 +38,7 @@ class DjangoJob(models.Model):
 
     class Meta:
         ordering = ("next_run_time",)
-        verboase_name = "Schedule Task"
+        verbose_name = "Schedule Task"
         verbose_name_plural = "Schedule Tasks"
 
 
