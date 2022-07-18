@@ -286,6 +286,7 @@ class DjangoJobStore(DjangoResultStoreMixin, BaseJobStore):
 
     @util.retry_on_db_operational_error
     def _get_jobs(self, **filters):
+        db.close_old_connections() # Try to resolve MySQl has gone away exception 18-08-2022 
         jobs = []
         failed_job_ids = set()
 
